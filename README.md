@@ -1,5 +1,4 @@
 # Project-Ontario_Pre-Triage_Application_for_Healthcare_Facilities
-# Ontario Pre-Triage Application for Healthcare Facilities
 
 A comprehensive C++ application designed to streamline the patient admission process during pandemics, effectively managing the pre-triage system for healthcare facilities in Ontario.
 
