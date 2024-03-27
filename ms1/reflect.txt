@@ -1,0 +1,49 @@
+Milestone1 and W6 reflect
+
+I took notes on workshop6 and Milestone1. 
+
+
+Time(unsigned int min = 0u); 
+1.   unsigned int represents a positive integer greater than or equal to 0.
+2. The constructor Time::Time(unsigned int min = 0u) doesn't require a condition check since unsigned int ensures the value is non-negative.
+
+
+Reading Time with istr.peek() and istr.get()
+1. istr.peek() is used to check the next character in the input stream without removing it. 
+It's helpful for verifying the format, such as ensuring a colon ':' is present between hours and minutes.
+
+2. istr.get() actually reads and removes the next character from the stream. 
+Use this after confirming the next character is a colon to correctly process time formats like HH:MM.
+
+'Menu' Construction 
+Initialize with setEmpty() and check if menuContent is not null.
+1. Copy menuContent to m_content and count the number of options by scanning for newline characters '\n'.
+2. This technique, taught by Tzu Han Chao, helps determine the number of menu options without complex logic.
+3.This code snippet was made possible with the help of my classmate Tzu Han Chao, 
+as I was really struggling with how to scan a string. She taught me to use a loop:
+a. First, *c = menuContent starts with the first character of the string.
+b. Then, as long as *c (which represents a character) is not \0 (the end-of-string marker), it continues to the next character.
+c. Whenever *c == '\n', m_optionsNum is incremented by one.
+This approach was suggested because it was mentioned by her teacher as a method to acknowledge who taught you.
+
+
+
+
+
+
+
+
+
+
+
+Key Tips on 'Copy and Assignment'
+1. Remember, overloading the assignment operator is not the same as defining a copy constructor. The assignment operator is used for copying values between existing objects, not creating a new object from an existing one.
+2. To prohibit copying of an object, mark the copy constructor as deleted: Email(const Email& e) = delete!!!!!
+
+workshop6
+
+Handling Files in 'loadEmails'
+
+Always delete the previous m_emailLines array with delete[] to avoid memory leaks before allocating new memory.
+Use file.is_open() to check if the file has successfully opened and file.close() to close the file after reading its contents.
+Adjust m_noOfEmails to match the actual number of emails read. This accounts for possible extra empty lines at the end of the file which are not valid email records. Use a temporary Email* temp array to resize m_emailLines based on the actual number of valid email records found.
