@@ -1,4 +1,16 @@
-
+/* Citation and Sources
+Final Project Milestone 3
+Module: Patient
+Filename: Patient.cpp
+Version 1.0
+Author   Kao Hao Han
+Revision History
+-----------------------------------------------------------
+Date      Reason
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------*/
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -110,6 +122,9 @@ namespace seneca {
             os.fill(' ');
             os << m_ticket.number();
             os << ' ' << m_ticket.time();
+            //deal with ..................................................bbb234234234    2 12:37
+            //dont know why 
+            os.unsetf(std::ios::right);
         }
         }else if(&os==&cout){
             if(!(*this)){
