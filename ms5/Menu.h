@@ -22,29 +22,22 @@ that my professor provided to complete my workshops and assignments.
 
 namespace seneca {
 class Menu {
-    //A constant char pointer to hold the content of the menu to be displayed
-    char *m_content;
-    //An Integer to hold the number of options in the menu
-    int m_optionsNum;
-    //An integer to hold the number of indetation tabs
-    int m_tabs;
-    
-    void deallocated();
-    void setEmpty();
-    public:
-        Menu();
-        Menu(const char* menuContent, int numberOfTabs = 0);
-        ~Menu();
-        //Email(const Email& e )=delete;
-        Menu(const Menu& m)=delete;
-        void display();
-        void printTabs();
+  char *m_content;
+  int m_optionsNum;
+  int m_tabs;
 
-        int& operator>>(int& Selection);
+  void deallocated();
+  void setEmpty();
 
-        
+public:
+  Menu();
+  Menu(const char *menuContent, int numberOfTabs = 0);
+  ~Menu();
+  Menu(const Menu &m) = delete;
+  void display();
+  void printTabs();
+
+  int &operator>>(int &Selection);
 };
 } // namespace seneca
 #endif
-
-

@@ -16,20 +16,15 @@ that my professor provided to complete my workshops and assignments.
 
 #include <iostream>
 
-namespace seneca{
-    class IOAble{
-    public:
-        
-        //always remember virutal should be set = 0!!
-        virtual std::ostream& write(std::ostream& os) const = 0; // Pure virtual
-        virtual std::istream& read(std::istream& is) = 0;        // Pure virtual
-        friend std::ostream &operator<<(std::ostream &os, const IOAble &obj);
-        friend std::istream &operator>>(std::istream &is, IOAble &obj);
+namespace seneca {
+class IOAble {
+public:
+  virtual std::ostream &write(std::ostream &os) const = 0;
+  virtual std::istream &read(std::istream &is) = 0;
+  friend std::ostream &operator<<(std::ostream &os, const IOAble &obj);
+  friend std::istream &operator>>(std::istream &is, IOAble &obj);
+};
 
-    };
-    
-}
+} // namespace seneca
 
-
-
-#endif 
+#endif

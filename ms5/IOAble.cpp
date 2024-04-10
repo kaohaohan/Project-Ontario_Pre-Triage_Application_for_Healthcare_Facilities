@@ -22,4 +22,3 @@ std::ostream &operator<<(std::ostream &os, const IOAble &obj) {
 std::istream &operator>>(std::istream &is, IOAble &obj) { return obj.read(is); }
 
 } // namespace seneca
-

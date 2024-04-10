@@ -13,25 +13,24 @@ that my professor provided to complete my workshops and assignments.
 -----------------------------------------------------------*/
 #ifndef SENECA_TRIAGEPATIENT_H_H
 #define SENECA_TRIAGEPATIENT_H_H
-#include <iostream>
 #include "IOAble.h"
 #include "Patient.h"
+#include <iostream>
 #define MAX_SYMPTOMS_LENGTH 512
 
-namespace seneca{
-    
-    
-    class TriagePatient: public Patient{
-        char* m_symptoms =nullptr;
-        public:
-        TriagePatient();
-        ~TriagePatient();
-        void setSym(const char* s);
-        char type()const ;
-        std::ostream& write(std::ostream& os=std::cout) const;
-        std::istream& read(std::istream& is=std::cin);  
+namespace seneca {
 
-    };
-}
+class TriagePatient : public Patient {
+  char *m_symptoms = nullptr;
 
-#endif 
+public:
+  TriagePatient();
+  ~TriagePatient();
+  void setSym(const char *s);
+  char type() const;
+  std::ostream &write(std::ostream &os = std::cout) const;
+  std::istream &read(std::istream &is = std::cin);
+};
+} // namespace seneca
+
+#endif

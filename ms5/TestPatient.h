@@ -13,26 +13,22 @@ that my professor provided to complete my workshops and assignments.
 -----------------------------------------------------------*/
 #ifndef SENECA_TESTPATIENT_H_
 #define SENECA_TESTPATIENT_H_
-#include <iostream>
 #include "IOAble.h"
 #include "Patient.h"
+#include <iostream>
 
-namespace seneca{
-    
-    class TestPatient: public Patient{
-        public:
-        TestPatient();
-        ~TestPatient();
+namespace seneca {
 
-        char type()const ;
+class TestPatient : public Patient {
+public:
+  TestPatient();
+  ~TestPatient();
 
+  char type() const;
 
-        std::ostream& write(std::ostream& os=std::cout) const;
+  std::ostream &write(std::ostream &os = std::cout) const;
+  std::istream &read(std::istream &is = std::cin);
+};
+} // namespace seneca
 
-    
-        std::istream& read(std::istream& is=std::cin);  
-
-    };
-}
-
-#endif 
+#endif
